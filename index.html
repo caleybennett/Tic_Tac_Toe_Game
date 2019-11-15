@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic Tac Toe</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Tic Tac Toe</h1>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <div class="container">
+<body>
 
-        <div class="row">
-          <div class="col-4 box zero" id="0" > </div>
-          <div class="col-4 box one" id="1"> </div>
-          <div class="col-4 box two" id="2"> </div>
-        </div>
-
-      <div class="row">
-        <div class="col-4 box three" id="3"> </div>
-        <div class="col-4 box four" id="4"> </div>
-        <div class="col-4 box five" id="5"> </div>
-      </div>
-
-      <div class="row">
-        <div class="col-4 box six" id="6"> </div>
-        <div class="col-4 box seven" id="7"> </div>
-        <div class="col-4 box eight" id="8"> </div>
-      </div>
-
+  <h1>Tic Tac Toe</h1>
+  <div id="userMessage"> </div>
+  <section class="before-auth">
+    <h3>Sign Up</h3>
+    <form id="sign-up">
+      <input type="email" name="credentials[email]" placeholder="email">
+      <input type="password" name="credentials[password]" placeholder="password">
+      <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
+      <button class="btn btn-primary"> Submit </button>
+    </form>
+    <h3> Sign In</h3>
+  <form id="sign-in">
+    <input type="email" name="credentials[email]" placeholder="email">
+    <input type="password" name="credentials[password]" placeholder="password">
+    <button class="btn btn-primary"> Submit </button>
+  </form>
+  </section>
+  <section class="after-auth">
+    <h3> Change Password </h3>
+    <form id="change-password">
+      <input type="text" name="passwords[old]" placeholder="old password">
+      <input type="text" name="passwords[new]" placeholder="new password">
+      <button class="btn btn-primary"> Submit </button>
+    </form>
+    <h3> Sign out </h3>
+    <form id="sign-out">
+      <button class="btn btn-danger"> Sign Out </button>
+    </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-4 box zero" id="0"> </div>
+      <div class="col-4 box one" id="1"> </div>
+      <div class="col-4 box two" id="2"> </div>
     </div>
-    <div id="message"> </div>
-  </body>
+
+    <div class="row">
+      <div class="col-4 box three" id="3"> </div>
+      <div class="col-4 box four" id="4"> </div>
+      <div class="col-4 box five" id="5"> </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 box six" id="6"> </div>
+      <div class="col-4 box seven" id="7"> </div>
+      <div class="col-4 box eight" id="8"> </div>
+    </div>
+
+  </div>
+  <div id="message"> </div>
+</section>
+</body>
+
 </html>

@@ -1,43 +1,59 @@
 'use strict'
-
+const api = require('./api')
+const ui = require('./ui')
+const getFormField = require('../../lib/get-form-fields')
 const gamelogic = require('./gamelogic')
-// const playerinfo = require('./playerinfo')
 
-// let player = 'X'
-//
-// const changePlayer = newPlayer => {
-//   if (newPlayer === 'X') {
-//     player = 'O'
-//     $('#message').html(`player O's move`)
-//   } else if (newPlayer === 'O') {
-//     player = 'X'
-//     $('#message').html(`player x's move`)
-//   }
-// }
-//
-// const onClickedSquare = event => {
-//   event.preventDefault()
-//   console.log(player)
-//   if ($(event.target).html() === ' ') {
-//     $(event.target).html(player)
-//     // $('#message').html(`player ${player} move`)
-//     const id = event.target.id
-//     //  $('#message').html(`player ${player} move`)
-//     moveToGameBoard(id, player)
-//     changePlayer(player)
-//     console.log(gamelogic.gameBoard)
-//     gamelogic.winGame(gamelogic.gameBoard)
-//   } else {
-//     $('#message').html(`You already clicked here`)
-//   }
-// }
-//
-// const moveToGameBoard = (id, player) => {
-//   gamelogic.gameBoard.splice(id, 0, player)
-// }
+const onSignUp = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormField(form)
+
+  api.signUp(formData)
+    .then(ui.onSignupSuccess)
+    .catch(ui.onSignupFailure)
+}
+const onSignIn = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormField(form)
+
+  api.signIn(formData)
+    .then(ui.onSigninSuccess)
+    .catch(ui.onSigninFailure)
+}
+
+const onChangePassword = event => {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormField(form)
+
+  api.changePassword(formData)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onChangePasswordFailure)
+}
+
+const onSignOut = event => {
+  event.preventDefault()
+
+  // leaving out formData becuase we aren't submitting data...
+  // const form = event.target
+
+  api.signOut()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
 
 const addHandlers = event => {
   $('.box').on('click', gamelogic.onClickedSquare)
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
+  $('#sign-out').on('submit', onSignOut)
 }
 
 module.exports = {

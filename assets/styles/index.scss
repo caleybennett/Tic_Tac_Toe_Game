@@ -5,3 +5,19 @@
   border-style: solid;
   padding: 40px;
 }
+
+.success {
+  background-color: green;
+  color: white;
+  font-size: 2em;
+}
+
+.failure {
+  background-color: red;
+  color: white;
+  font-size: 2em;
+}
+
+.after-auth {
+  display: none;
+}

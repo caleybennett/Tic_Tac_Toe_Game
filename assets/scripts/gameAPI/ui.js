@@ -11,7 +11,7 @@ const onSuccess = message => {
 }
 
 const onFailure = message => {
-  $('#userMessage')
+  $('#game-message')
     .removeClass('success')
     .addClass('failure')
     .text(message)
@@ -39,7 +39,6 @@ const onUpdateGameSuccess = () => {
 
 const onUpdateGameFailure = () => {
   onFailure('Something went wrong, try another move')
-  console.log()
 }
 
 // const getBooksSuccess = response => {

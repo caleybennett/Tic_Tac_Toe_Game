@@ -82,7 +82,6 @@ const onClickedSquare = event => {
   console.log(gameBoard)
 }
 
-
 // const onUpdateGame = (id, player) => {
 //   api.update(id, player)
 //     .then(ui.onUpdateGameSuccess)

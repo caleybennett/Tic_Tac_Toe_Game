@@ -3,6 +3,7 @@
 .box {
   align-items: center;
   border-style: solid;
+  justify-content: center;
   padding: 40px;
 }
 
@@ -19,5 +20,13 @@
 }
 
 .after-auth {
+  display: none;
+}
+
+.after-start-game {
+  display: none;
+}
+
+.restart {
   display: none;
 }

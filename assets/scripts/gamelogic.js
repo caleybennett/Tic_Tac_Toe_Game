@@ -1,6 +1,8 @@
 'use strict'
 // const htmlDoc = require('./index.html')
 // const events = require('./events')
+const api = require('./gameAPI/api.js')
+const gameui = require('./gameAPI/ui.js')
 
 let player = 'X'
 
@@ -33,9 +35,11 @@ const onClickedSquare = event => {
   if ($(event.target).html() === ' ') {
     $(event.target).html(player)
     const id = event.target.id
+    api.update(id, player)
+      .then(gameui.onUpdateGameSuccess)
+      .catch(gameui.onUpdateGameFailure)
     moveToGameBoard(id, player)
     changePlayer(player)
-    console.log(gameBoard)
     winGame(gameBoard)
     drawGame(gameBoard)
   } else {
@@ -47,7 +51,19 @@ const moveToGameBoard = (id, player) => {
   gameBoard.splice(id, 1, player)
 }
 
-const gameBoard = ['', '', '', '', '', '', '', '', '']
+// const onUpdateGame = (id, player) => {
+//   api.update(id, player)
+//     .then(ui.onUpdateGameSuccess)
+//     .catch(ui.onUpdateGameFailure)
+// }
+
+let gameBoard = ['', '', '', '', '', '', '', '', '']
+
+const newGame = event => {
+  gameBoard = ['', '', '', '', '', '', '', '', '']
+  $('.box').text(' ')
+  $('.box').on('click', onClickedSquare)
+}
 
 // const be able to iterate through every method in the array if itdoes not equal
 // empty string
@@ -135,5 +151,6 @@ module.exports = {
   gameBoard,
   winGame,
   onClickedSquare,
-  gameOver
+  gameOver,
+  newGame
 }

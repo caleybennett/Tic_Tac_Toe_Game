@@ -47,7 +47,6 @@ const onSignOut = event => {
     .catch(ui.onSignOutFailure)
 }
 
-
 const addHandlers = event => {
   $('.box').on('click', gamelogic.onClickedSquare)
   $('#sign-up').on('submit', onSignUp)

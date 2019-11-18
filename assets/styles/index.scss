@@ -1,6 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-color: #b3ffe6;
+  font-family: 'Barlow', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Cedarville Cursive', cursive;
+  text-align: center;
+}
 .box {
+  background-color: white;
   align-items: center;
   border-style: solid;
   justify-content: center;
@@ -8,13 +19,13 @@
 }
 
 .success {
-  background-color: green;
+  background-color: rgba(13, 231, 21, 0.36);
   color: white;
   font-size: 2em;
 }
 
 .failure {
-  background-color: red;
+  background-color: rgba(3, 19, 48, 0.4);
   color: white;
   font-size: 2em;
 }

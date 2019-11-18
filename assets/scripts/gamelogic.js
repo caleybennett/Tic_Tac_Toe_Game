@@ -9,10 +9,10 @@ let player = 'X'
 const changePlayer = newPlayer => {
   if (newPlayer === 'X') {
     player = 'O'
-    $('#message').html(`player O's move`)
+    $('#message').text("player O's move")
   } else if (newPlayer === 'O') {
     player = 'X'
-    $('#message').html(`player x's move`)
+    $('#message').text("player X's move")
   }
 }
 const gameOver = function (boolean) {
@@ -30,11 +30,22 @@ const drawGame = (gameboard) => {
   }
 }
 
+// const alreadyClicked = event => {
+//   if ($(event.target).text() === 'X' || $(event.target).text() === 'O') {
+//     $('#message').html(`You already clicked here`)
+//   } else {
+//
+//   }
+// }
+
 const onClickedSquare = event => {
   event.preventDefault()
-  if ($(event.target).html() === ' ') {
+  const id = event.target.id
+  if (gameBoard[id] !== '') {
+    $('#message').html(`You already clicked here`)
+    console.log(gameBoard + 'inside message')
+  } else if ($(event.target).html() === ' ') {
     $(event.target).html(player)
-    const id = event.target.id
     api.update(id, player)
       .then(gameui.onUpdateGameSuccess)
       .catch(gameui.onUpdateGameFailure)
@@ -42,9 +53,13 @@ const onClickedSquare = event => {
     changePlayer(player)
     winGame(gameBoard)
     drawGame(gameBoard)
-  } else {
-    $('#message').html(`You already clicked here`)
+    console.log(gameBoard + 'correct statement')
+    //     alreadyClicked(gameBoard)
   }
+  // } else if ($(event.target).text() !== ' ') {
+  //   $('#message').html(`You already clicked here`)
+  // }
+  console.log(gameBoard)
 }
 
 const moveToGameBoard = (id, player) => {
@@ -61,7 +76,7 @@ let gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const newGame = event => {
   gameBoard = ['', '', '', '', '', '', '', '', '']
-  $('.box').text(' ')
+  $('.box').html(' ')
   $('.box').on('click', onClickedSquare)
 }
 

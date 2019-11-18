@@ -29,7 +29,6 @@ const update = (index, value) => {
         }
       }
     }
-
   })
 }
 

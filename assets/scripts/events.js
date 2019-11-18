@@ -48,7 +48,6 @@ const onSignOut = event => {
 }
 
 const addHandlers = event => {
-  $('.box').on('click', gamelogic.onClickedSquare)
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)

@@ -30,11 +30,32 @@ const drawGame = (gameboard) => {
   }
 }
 
+const moveToGameBoard = (id, player) => {
+  gameBoard.splice(id, 1, player)
+}
+
 // const alreadyClicked = event => {
 //   if ($(event.target).text() === 'X' || $(event.target).text() === 'O') {
 //     $('#message').html(`You already clicked here`)
 //   } else {
 //
+//   }
+// }
+
+// const onClickedSquare = event => {
+//   event.preventDefault()
+//   const id = event.target.id
+//   if ($(event.target).html() !== ' ') {
+//     console.log('I am here')
+//   } else if ($(event.target).html() === ' ') {
+//     console.log('but I am here')
+//     $(event.target).html(player)
+//     // moveToGameBoard(id, player)
+//     api.update(id, player)
+//       .then(gameui.onUpdateGameSuccess)
+//       .catch(gameui.onUpdateGameFailure)
+//     console.log(gameBoard)
+//     // changePlayer(player)
 //   }
 // }
 
@@ -54,7 +75,6 @@ const onClickedSquare = event => {
     winGame(gameBoard)
     drawGame(gameBoard)
     console.log(gameBoard + 'correct statement')
-    //     alreadyClicked(gameBoard)
   }
   // } else if ($(event.target).text() !== ' ') {
   //   $('#message').html(`You already clicked here`)
@@ -62,9 +82,7 @@ const onClickedSquare = event => {
   console.log(gameBoard)
 }
 
-const moveToGameBoard = (id, player) => {
-  gameBoard.splice(id, 1, player)
-}
+
 
 // const onUpdateGame = (id, player) => {
 //   api.update(id, player)
@@ -75,9 +93,12 @@ const moveToGameBoard = (id, player) => {
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const newGame = event => {
+  gameOver(true)
   gameBoard = ['', '', '', '', '', '', '', '', '']
   $('.box').html(' ')
   $('.box').on('click', onClickedSquare)
+  player = 'X'
+  $('#message').text("player X's move")
 }
 
 // const be able to iterate through every method in the array if itdoes not equal
@@ -95,52 +116,52 @@ const newGame = event => {
 
 const winGame = (gameBoard) => {
   if (gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') {
-    $('#message').html(`Yay!!, player X won!`)
+    $('#message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[3] === 'X' && gameBoard[4] === 'X' && gameBoard[5] === 'X') {
-    $('#message').html(`Yay!!, player X won!`)
+    $('#message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[6] === 'X' && gameBoard[7] === 'X' && gameBoard[8] === 'X') {
-    $('#message').html(`Yay!!, player X won!`)
+    $('#message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[0] === 'X' && gameBoard[3] === 'X' && gameBoard[6] === 'X') {
-    $('#message').html(`Yay!!, player X won!`)
+    $('#message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[1] === 'X' && gameBoard[4] === 'X' && gameBoard[7] === 'X') {
-    $('#message').html(`Yay!!, player X won!`)
+    $('#message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[2] === 'X' && gameBoard[8] === 'X' && gameBoard[5] === 'X') {
-    $('#message').html(`Yay!!, player X won!`)
+    $('#message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[0] === 'X' && gameBoard[4] === 'X' && gameBoard[8] === 'X') {
     $('#message').html(`Yay!!, player X won!`)
     gameOver(true)
   } else if (gameBoard[2] === 'X' && gameBoard[4] === 'X' && gameBoard[6] === 'X') {
-    $('#message').html(`Yay!!, player X won!`)
+    $('#message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[0] === 'O' && gameBoard[1] === 'O' && gameBoard[2] === 'O') {
-    $('#message').html(`Yay!!, player O won!`)
+    $('#message').html(`Yay!! player O won!`)
     gameOver(true)
   } else if (gameBoard[3] === 'O' && gameBoard[4] === 'O' && gameBoard[5] === 'O') {
-    $('#message').html(`Yay!!, player O won!`)
+    $('#message').html(`Yay!! player O won!`)
     gameOver(true)
   } else if (gameBoard[6] === 'O' && gameBoard[7] === 'O' && gameBoard[8] === 'O') {
-    $('#message').html(`Yay!!, player O won!`)
+    $('#message').html(`Yay!! player O won!`)
     gameOver(true)
   } else if (gameBoard[0] === 'O' && gameBoard[3] === 'O' && gameBoard[6] === 'O') {
     $('#message').html(`Yay!!, player O won!`)
     gameOver(true)
   } else if (gameBoard[1] === 'O' && gameBoard[4] === 'O' && gameBoard[7] === 'O') {
-    $('#message').html(`Yay!!, player O won!`)
+    $('#message').html(`Yay!! player O won!`)
     gameOver(true)
   } else if (gameBoard[2] === 'O' && gameBoard[8] === 'O' && gameBoard[5] === 'O') {
-    $('#message').html(`Yay!!, player O won!`)
+    $('#message').html(`Yay!! player O won!`)
     gameOver(true)
   } else if (gameBoard[0] === 'O' && gameBoard[4] === 'O' && gameBoard[8] === 'O') {
-    $('#message').html(`Yay!!, player O won!`)
+    $('#message').html(`Yay!! player O won!`)
     gameOver(true)
   } else if (gameBoard[2] === 'O' && gameBoard[4] === 'O' && gameBoard[6] === 'O') {
-    $('#message').html(`Yay!!, player O won!`)
+    $('#message').html(`Yay!! player O won!`)
     gameOver(true)
   } else {
     console.log('keep playing')

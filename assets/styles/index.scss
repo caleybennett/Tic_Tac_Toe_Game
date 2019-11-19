@@ -5,7 +5,9 @@ body {
   font-family: 'Barlow', sans-serif;
   text-align: center;
   color: rgba(143, 40, 40, 1);
+  display: grid;
 }
+
 
 h1 {
   font-family: 'Cedarville Cursive', cursive;
@@ -16,15 +18,35 @@ h1 {
 }
 
  button {
-   color: white
+   color: white;
  }
 
+.board {
+  margin: 0 auto;
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+}
+
 .box {
-  background-color: white;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 200px;
+  height: 100px;
   align-items: center;
-  border-style: solid;
   justify-content: center;
-  padding: 40px;
+  background-color: white;
+  color: rgba(142, 37, 11, 1);
+  font-size: 2em;
+  font-weight: bold;
+  padding-top: 10px
+}
+
+.box:nth-child(3n) {
+  border-right: 0;
+}
+
+.box:nth-last-child(-1n + 3) {
+  border-bottom: 0;
 }
 
 .success {

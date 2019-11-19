@@ -2,7 +2,7 @@
 const store = require('../store')
 
 const onSuccess = message => {
-  $('#game-message')
+  $('#message-user')
     .removeClass('failure')
     .addClass('success')
     .html(message)
@@ -11,7 +11,7 @@ const onSuccess = message => {
 }
 
 const onFailure = message => {
-  $('#game-message')
+  $('#message-user')
     .removeClass('success')
     .addClass('failure')
     .text(message)

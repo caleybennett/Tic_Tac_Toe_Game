@@ -23,32 +23,34 @@
       <input type="email" name="credentials[email]" placeholder="email">
       <input type="password" name="credentials[password]" placeholder="password">
       <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
-      <button class="btn btn-primary"> Submit </button>
+      <button class="btn btn-danger"> Submit </button>
     </form>
     <h3> Sign In</h3>
   <form id="sign-in">
     <input type="email" name="credentials[email]" placeholder="email">
     <input type="password" name="credentials[password]" placeholder="password">
-    <button class="btn btn-primary"> Submit </button>
+    <button class="btn btn-danger"> Submit </button>
   </form>
   </section>
   <section class="after-auth">
-    <h3> Get Games </h3>
+  <nav class="navbar navbar-default">
+    <!-- <h4> Get Games </h4> -->
     <form id="get-games">
-      <button class="btn btn-primary getgames"> See Games Played </button>
+      <button class="btn btn-danger getgames"> See Games Played </button>
     </form>
     <div class="get-games-display"> </div>
 
-    <h3> Change Password </h3>
+    <!-- <h4> Change Password </h4> -->
     <form id="change-password">
       <input type="text" name="passwords[old]" placeholder="old password">
       <input type="text" name="passwords[new]" placeholder="new password">
-      <button class="btn btn-primary"> Submit </button>
+      <button class="btn btn-danger"> Change Password </button>
     </form>
-    <h3> Sign out </h3>
+    <!-- <h4> Sign out </h4> -->
     <form id="sign-out">
-      <button class="btn btn-danger"> Sign Out </button>
+      <button class="btn btn-dark"> Sign Out </button>
     </form>
+  </nav>
     <main class="after-start-game">
   <div class="container-fluid">
     <div class="row h-100 board">
@@ -64,19 +66,19 @@
     </div>
   </div>
   </main>
-  <div id="game-message"> </div>
+  <div id="message-user"> </div>
 
   <div class="createGame">
     <h3> Create A Game </h3>
   <form id="create-game">
-    <button class="btn btn-primary newgame"> Create a Game </button>
+    <button class="btn btn-danger newgame"> Create a Game </button>
   </form>
 </div>
 
-  <div id="message"> </div>
+  <div class="message"> </div>
 
 <div class="restart">
-  <button class="btn btn-primary"> Restart Game </button>
+  <button class="btn btn-danger"> Restart Game </button>
 </div>
 
 </section>

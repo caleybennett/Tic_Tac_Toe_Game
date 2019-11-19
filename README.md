@@ -3,10 +3,10 @@
 ### The Game
 Tic Tac Toe is a game where a player tries to match three letters in a row on a 3x3 game board. The player switches from X's and O's where the goal is to get three in a row of a matching letter. When this happens the player who matches the letters wins. If the board is full and there aren't three in a row, the game is a tie.
 
-## Planning
+### Planning
 I started my planning process by drawing out wire frames and writing user stories to make sure I knew what I wanted my game to do. These are linked bellow. Once I did this I made a timeline of when I wanted certain aspects of my game to be done. The first day I wanted to complete the logic behind my game. The second day I wanted to finish my user API and the third day I wanted to finish my game API and reach a minimum viable product so the fourth day I could spend styling and debugging my project.
 
-## Development Proccess
+### Development Proccess
 
 I first started this project by understanding and coding the logic behind the game. The first thing I did was make a board where the game would be played using CSS bootstrap. I then made the game board responsive to adding X or O and switching between the two. After this I decided to make an array that would record the position of X or O on the board using the index and the player using what HTML had just been added. After this I made a function to determine if a game was won or a tie. All of these functions are called on when a square is clicked.
 

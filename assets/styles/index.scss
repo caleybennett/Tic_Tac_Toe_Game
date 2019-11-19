@@ -15,6 +15,7 @@ h1 {
   text-align: center;
   color: rgba(142, 37, 11, 1);
   text-decoration: underline wavy;
+  padding: 20px;
 }
 
  button {
@@ -63,6 +64,15 @@ h1 {
 
 .after-auth {
   display: none;
+}
+
+.before-auth{
+  max-width: 500px;
+  border: 4px solid rgba(142, 37, 11, 1);
+  align: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px
 }
 
 .after-start-game {

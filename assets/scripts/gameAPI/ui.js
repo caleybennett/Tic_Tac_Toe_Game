@@ -1,5 +1,10 @@
 
 const store = require('../store')
+// const gamelogic = require('../gamelogic')
+
+// const fadeOut = () => {
+//   $('#message-user').fadeOut()
+// }
 
 const onSuccess = message => {
   $('#message-user')
@@ -8,6 +13,7 @@ const onSuccess = message => {
     .html(message)
   $('form').trigger('reset')
   $('.start-game-success').show()
+//  setTimeout(fadeOut, 5000)
 }
 
 const onFailure = message => {
@@ -16,11 +22,11 @@ const onFailure = message => {
     .addClass('failure')
     .text(message)
   $('form').trigger('reset')
+  // setTimeout(fadeOut, 5000)
 }
 
 const onCreateGameSuccess = gameData => {
   onSuccess('You successfully created a new game! Now, play!')
-  console.log(gameData)
   store.game = gameData.game
   $('.after-start-game').show()
   $('.restart').show()
@@ -32,7 +38,7 @@ const onCreateGameFailure = () => {
 }
 
 const onUpdateGameSuccess = () => {
-  onSuccess('Great move! Game updated!')
+  onSuccess(`Great move! Game updated!`)
   // $('.after-auth').hide()
   // $('.before-auth').show()
 }
@@ -70,7 +76,7 @@ const onUpdateGameFailure = () => {
 
 const getGamesSuccess = response => {
   const games = response.games
-  console.log(response)
+  // console.log(response)
   let gameHtml = 0
   games.forEach(game => {
     gameHtml++
@@ -78,8 +84,9 @@ const getGamesSuccess = response => {
   $('.get-games-display').html(gameHtml)
 }
 
-const getGamesFailure = error => {
-  console.error(error)
+const getGamesFailure = () => {
+  // console.error(error)
+  onFailure('Oh nooooo, something went wrong! Please try again.')
 }
 module.exports = {
   onCreateGameFailure,

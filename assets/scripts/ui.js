@@ -2,6 +2,10 @@
 
 const store = require('./store')
 
+const fadeOut = () => {
+  $('#userMessage').fadeOut().empty()
+}
+
 const onSuccess = message => {
   $('#userMessage')
     .removeClass('failure')
@@ -50,7 +54,6 @@ const onSignOutSuccess = () => {
   store.user = {}
   $('.after-auth').hide()
   $('.before-auth').show()
-  console.log(store.user)
 }
 
 const onSignOutFailure = () => {

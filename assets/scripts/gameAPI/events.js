@@ -17,7 +17,7 @@ const onCreateGame = event => {
 
 const onGetGames = event => {
   event.preventDefault()
-  console.log('on get games is working')
+  // console.log('on get games is working')
   // const form = event.target
   // const formData = formFields(form)
   api.getgame()
@@ -30,7 +30,7 @@ const onGetGames = event => {
 
 // const getValue = event => {
 //   return $(event.target).val()
-//   console.log('get value works')
+//   //////console.log('get value works')
 // }
 //
 // const getIndex = event => {
@@ -38,11 +38,11 @@ const onGetGames = event => {
 // }
 //
 // const onUpdateGame = event => {
-//   // console.log('on update game works')
+//   // //////console.log('on update game works')
 //   // index = gamelogic.gameBoard.each(getIndex)
 //   // value = gamelogic.gameBoard.each(getValue)
-//   console.log(gamelogic.id)
-//   console.log(gamelogic.player)
+//   //////console.log(gamelogic.id)
+//   //////console.log(gamelogic.player)
 //   // store the index and the value in variables
 //   // store the ID in the store.js file
 //   // const index = same index ID in the html

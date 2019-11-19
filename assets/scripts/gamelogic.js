@@ -17,7 +17,7 @@ const changePlayer = newPlayer => {
 }
 const gameOver = function (boolean) {
   if (boolean === true) {
-    console.log('game over')
+    // console.log('game over')
     $('.box').off('click', onClickedSquare)
   }
 }
@@ -64,7 +64,6 @@ const onClickedSquare = event => {
   const id = event.target.id
   if (gameBoard[id] !== '') {
     $('.message').html(`You already clicked here`)
-    console.log(gameBoard + 'inside message')
   } else if ($(event.target).html() === ' ') {
     $(event.target).html(player)
     api.update(id, player)
@@ -74,12 +73,10 @@ const onClickedSquare = event => {
     changePlayer(player)
     winGame(gameBoard)
     drawGame(gameBoard)
-    console.log(gameBoard + 'correct statement')
   }
   // } else if ($(event.target).text() !== ' ') {
   //   $('#message').html(`You already clicked here`)
   // }
-  console.log(gameBoard)
 }
 
 // const onUpdateGame = (id, player) => {
@@ -132,7 +129,7 @@ const winGame = (gameBoard) => {
     $('.message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[0] === 'X' && gameBoard[4] === 'X' && gameBoard[8] === 'X') {
-    $('.message').html(`Yay!!, player X won!`)
+    $('.message').html(`Yay!! player X won!`)
     gameOver(true)
   } else if (gameBoard[2] === 'X' && gameBoard[4] === 'X' && gameBoard[6] === 'X') {
     $('.message').html(`Yay!! player X won!`)
@@ -161,8 +158,6 @@ const winGame = (gameBoard) => {
   } else if (gameBoard[2] === 'O' && gameBoard[4] === 'O' && gameBoard[6] === 'O') {
     $('.message').html(`Yay!! player O won!`)
     gameOver(true)
-  } else {
-    console.log('keep playing')
   }
 }
 
@@ -186,5 +181,6 @@ module.exports = {
   winGame,
   onClickedSquare,
   gameOver,
-  newGame
+  newGame,
+  player
 }

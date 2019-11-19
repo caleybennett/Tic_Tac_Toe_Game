@@ -43,6 +43,7 @@ const onSigninFailure = () => {
 
 const onChangePasswordSuccess = () => {
   onSuccess('You successfully changed your password')
+  $('.get-games-display').hide()
 }
 
 const onChangePasswordFailure = () => {
@@ -54,6 +55,7 @@ const onSignOutSuccess = () => {
   store.user = {}
   $('.after-auth').hide()
   $('.before-auth').show()
+  $('.get-games-display').hide()
 }
 
 const onSignOutFailure = () => {

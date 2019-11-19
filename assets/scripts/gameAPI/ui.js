@@ -31,6 +31,7 @@ const onCreateGameSuccess = gameData => {
   $('.after-start-game').show()
   $('.restart').show()
   $('.createGame').hide()
+  $('.get-games-display').hide()
 }
 
 const onCreateGameFailure = () => {
@@ -74,14 +75,16 @@ const onUpdateGameFailure = () => {
 //       "player_o": null
 //     }
 
+
+
 const getGamesSuccess = response => {
   const games = response.games
-  // console.log(response)
   let gameHtml = 0
   games.forEach(game => {
     gameHtml++
   })
   $('.get-games-display').html(gameHtml)
+  $('.get-games-display').show()
 }
 
 const getGamesFailure = () => {

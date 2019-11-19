@@ -9,6 +9,7 @@ const signUp = formData => {
     data: formData
   })
 }
+
 const signIn = formData => {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
@@ -16,6 +17,7 @@ const signIn = formData => {
     data: formData
   })
 }
+
 const changePassword = formData => {
   return $.ajax({
     url: config.apiUrl + '/change-password',

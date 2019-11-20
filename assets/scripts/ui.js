@@ -2,9 +2,9 @@
 
 const store = require('./store')
 
-const fadeOut = () => {
-  $('#userMessage').fadeOut().empty()
-}
+// const fadeOut = () => {
+//   $('#userMessage').fadeOut().empty()
+// }
 
 const onSuccess = message => {
   $('#userMessage')

@@ -45,6 +45,10 @@ const onSignOut = event => {
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
+  gamelogic.newGame(event)
+  $('#message-user').hide()
+  $('.after-start-game').hide()
+  $('.message').hide()
 }
 
 const addHandlers = event => {

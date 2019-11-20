@@ -8,6 +8,8 @@ const onCreateGame = event => {
   event.preventDefault()
 
   gamelogic.newGame(event)
+  $('#message-user').show()
+  $('.message').show()
 
   api.create()
     .then(ui.onCreateGameSuccess)

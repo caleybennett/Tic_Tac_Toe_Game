@@ -52,9 +52,9 @@ const moveToGameBoard = (id, player) => {
 const onClickedSquare = event => {
   event.preventDefault()
   const id = event.target.id
-  if (gameBoard[id] !== '') {
-    $('.message').html(`You already clicked here`)
-  } else if ($(event.target).html() === ' ') {
+  // if (gameBoard[id] !== '') {
+  //   $('.message').html(`You already clicked here`)
+  if ($(event.target).html() === ' ') {
     $(event.target).css('background', 'transparent').html(player)
     api.update(id, player)
       .then(gameui.onUpdateGameSuccess)
@@ -94,12 +94,12 @@ const onClickedSquare = event => {
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const newGame = event => {
+  over = true
   gameBoard = ['', '', '', '', '', '', '', '', '']
   $('.box').html(' ').css('background', 'white')
   $('.box').on('click', onClickedSquare)
   player = 'X'
   $('.message').text("Player X's move")
-  over = false
 }
 
 // const be able to iterate through every method in the array if itdoes not equal
